@@ -1,0 +1,145 @@
+:root {
+  --bg: #fbf9f4;
+  --fg: #22262a;
+  --muted: #6b7075;
+  --accent: #b86e0c;
+  --rule: #e2ddd2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1d2124;
+    --fg: #e9e4da;
+    --muted: #9aa1a6;
+    --accent: #e39827;
+    --rule: #3a4146;
+  }
+}
+
+html {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.book-header,
+nav,
+main,
+footer {
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+a {
+  color: var(--accent);
+}
+
+.cover {
+  display: block;
+  width: 10rem;
+  margin: 3rem auto 1.5rem;
+  border-radius: 3px;
+  box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.25);
+}
+
+h1.title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+.subtitle {
+  margin: 0.3rem 0 1.5rem;
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+}
+
+.draft-note {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+nav {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
+
+nav h2 {
+  font-size: 1rem;
+  font-weight: normal;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+nav ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+nav li {
+  margin: 0.15rem 0;
+}
+
+main h2 {
+  margin: 4rem 0 1.5rem;
+  font-size: 1.5rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+main h3 {
+  margin: 2.5rem 0 1rem;
+  font-size: 1.2rem;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+}
+
+main p {
+  margin: 0 0 1em;
+}
+
+sup {
+  line-height: 0;
+}
+
+.footnotes {
+  margin-top: 4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.footnotes::before {
+  content: "Working notes";
+  display: block;
+  margin-bottom: 0.5rem;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+}
+
+.footnotes hr {
+  display: none;
+}
+
+footer {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}

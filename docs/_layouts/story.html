@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <meta property="og:type" content="book">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/assets/cover.png' | absolute_url }}">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="{{ '/assets/story.css' | relative_url }}">
+</head>
+<body>
+  <header class="book-header">
+    <img class="cover" src="{{ '/assets/cover.png' | relative_url }}" alt="Cover: four orange tally marks crossed by a fifth, above the title Fallow, Tally's Last Count">
+    <h1 class="title">{{ page.title }}</h1>
+    <p class="subtitle">The story of a Factorio: Space Age mod in the making</p>
+    <p class="draft-note">This is a draft. Feedback is very welcome, either to whoever sent you this link or as an <a href="https://github.com/jodli/fallow-mod/issues">issue on GitHub</a>.</p>
+  </header>
+
+  <nav id="contents" aria-label="Contents" hidden>
+    <h2>Contents</h2>
+    <ul></ul>
+  </nav>
+
+  <main>
+{{ content }}
+  </main>
+
+  <footer>
+    <p>Fallow: Tally's Last Count is a draft. <a href="https://github.com/jodli/fallow-mod">Source on GitHub</a>.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('contents');
+      var list = nav.querySelector('ul');
+      document.querySelectorAll('main h2[id]').forEach(function (heading) {
+        var item = document.createElement('li');
+        var link = document.createElement('a');
+        link.href = '#' + heading.id;
+        link.textContent = heading.textContent;
+        item.appendChild(link);
+        list.appendChild(item);
+      });
+      if (list.children.length) nav.hidden = false;
+    })();
+  </script>
+</body>
+</html>

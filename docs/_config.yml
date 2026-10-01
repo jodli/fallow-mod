@@ -1,0 +1,6 @@
+title: "Fallow: Tally’s Last Count"
+description: "The story of a Factorio: Space Age mod in the making."
+
+# The design documents live next to the story but are not part of the site.
+exclude:
+  - design
